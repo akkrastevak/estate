@@ -14,6 +14,7 @@ import org.hibernate.validator.constraints.Range;
 @Getter
 public class FloorDto {
 
+    private Long id;
     @Range(min = -3, max = 164, message = "Floor must be between -3 and 164.")
     private int number;
 }
