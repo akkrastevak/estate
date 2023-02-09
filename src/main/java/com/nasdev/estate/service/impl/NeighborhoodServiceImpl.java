@@ -32,4 +32,10 @@ public class NeighborhoodServiceImpl implements NeighborhoodService {
     public Set<Neighborhood> findAll() {
         return new HashSet<>(neighborhoodRepository.findAll());
     }
+
+    @Override
+    public Neighborhood findById(Long id) {
+        return neighborhoodRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException(String.format("Neighborhood with id %d can not be found.", id)));
+    }
 }

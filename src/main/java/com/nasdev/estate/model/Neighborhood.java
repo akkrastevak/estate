@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -21,7 +23,6 @@ public class Neighborhood {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "city_id")
-    private City city;
+    @ManyToMany(mappedBy = "neighborhoods")
+    private Set<City> cities;
 }

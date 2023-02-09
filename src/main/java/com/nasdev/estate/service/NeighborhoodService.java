@@ -10,7 +10,7 @@ public interface NeighborhoodService {
     Neighborhood findByName (String name);
     Set<Neighborhood> findAll ();
 
-
+    Neighborhood findById (Long id);
 
 
 }
